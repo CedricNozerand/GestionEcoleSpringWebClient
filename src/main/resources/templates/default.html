@@ -27,7 +27,7 @@
 	                <th>Nom</th>
 	                <th>Prénom</th>
 	                <th>Adresse mail</th>
-	                <th> Actions </th>
+	                <th style="text-align:center"> Actions </th>
 	            </tr>
 	        </thead>
 	        <tbody>
@@ -35,10 +35,10 @@
 	                <td th:text="${student.firstName}"></td>
 	                <td th:text="${student.lastName}"></td>
 	                <td th:text="${student.mailAddress}"></td>
-	                <td>
+	                <td style="text-align:center">
 						<a class="btn btn-success" th:href="@{/updateStudent/{id}(id=${student.id})}"> <i class="bi bi-pencil-square"></i> </a>				
 						<a class="btn btn-danger" th:href="@{/deleteStudent/{id}(id=${student.id})}" > <i class="bi bi-trash"></i> </a>
-						<a class="btn btn-info" th:href="@{/showStudent/{id}(id=${student.id})}" > <i class="bi bi-eye"></i> </a>
+						<a class="btn btn-info" th:href="@{/showStudent/{id}(id=${student.id})}" > <i class="bi bi-eye" style="color:white"></i> </a>
 						<a class="btn btn-secondary"  th:href="@{/addStudentCourse/{id}(id=${student.id})}"> <i class="bi bi-bookmark-plus"></i> </a>
 	                </td>
 	            </tr>

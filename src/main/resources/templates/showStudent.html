@@ -15,27 +15,38 @@
  	
  
  	<div class="card container mt-5 shadow">
+ 		<div class="card-body">
  		
- 		<h1>Informations de l'étudiant</h1>
+ 			<h1 class="card-title">Informations de l'étudiant</h1>
  		
- 		<br>
-
-		<div class="text-nowrap">
-			<!--Table-->
-			Prénom		 	: <span th:text="*{student.firstName}">  </span>
-			<br/><br/>
-			Nom		 	 	: <span th:text="*{student.lastName}">  </span>
-			<br/><br/>
-			Adresse mail 	: <span th:text="*{student.mailAddress}">  </span>
-			<br/><br/>
-			Adresse		 	: <span th:text="*{student.address}">  </span>
-			<br/><br/>
-			N° téléphone 	: <span th:text="*{student.numberPhone}">  </span>
-			<br/><br/>
-			Date naissance 	: <span th:text="*{student.birthDate}">  </span>
-	
-		</div>
- 		
+ 			<div class="text-nowrap">
+ 			
+ 			
+ 				
+ 				<ul style="list-style-type: none; padding-left: 0px;">
+                    <li style="padding: 5px">
+                        <span class="infos"><i class="fas fa-user" style="color:#1abc9c"></i></span>
+                        <span style="color:#050505; font-weight: 500" th:text="*{student.firstName}"></span> <span style="color:#050505; font-weight: 500" th:text="*{student.lastName}">
+                    </li>
+                 	<li style="padding: 5px">
+                        <span class="infos"><i class="fas fa-map-marked-alt" style="color:#1abc9c"></i></span>
+                        <span style="color:#050505; font-weight: 500" th:text="*{student.address}"></span>
+                 	</li>
+                 	<li style="padding: 5px">
+                        <span class="infos"><i class="fas fa-envelope-open" style="color:#1abc9c"></i></span>
+                        <span style="color:#050505; font-weight: 500" th:text="*{student.mailAddress}"></span>
+                 	</li>
+                 	<li style="padding: 5px">
+                        <span class="infos"><i class="fas fa-phone-alt" style="color:#1abc9c"></i></span>
+                        <span style="color:#050505; font-weight: 500" th:text="*{student.numberPhone}"></span>
+                 	</li>
+                 	<li style="padding: 5px">
+                        <span class="infos"><i class="fas fa-birthday-cake" style="color:#1abc9c"></i></span>
+                        <span style="color:#050505; font-weight: 500" th:text="*{student.birthDate}"></span>
+                 	</li>
+                 </ul>
+			</div>
+ 		</div>
  	</div>
  	
  	<br>

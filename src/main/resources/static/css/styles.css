@@ -10259,3 +10259,13 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #1a252f;
 }
+
+.infos{
+	color: black;
+    width: 4rem;
+    padding: 0rem .2em 0rem .2em;
+    border-radius: .2em;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}

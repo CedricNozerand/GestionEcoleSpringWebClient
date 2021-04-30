@@ -11,25 +11,23 @@
     <br>
     <br>
     <br>
-    
- 	
  
  	<div class="card container mt-5 shadow">
- 		
- 		<h1>Informations sur le cours</h1>
- 		
- 		<br>
-
-		<div class="text-nowrap">
-			<!--Table-->
-			Intitulé		: <span th:text="*{course.themeCourse}">  </span>
-			<br/><br/>
-			Nombre d'heure	: <span th:text="*{course.numberHours}">  </span>
-			<br/><br/>
-		</div>
+ 		<div class="card-body">
+ 			<h1 class="card-title">Informations sur le cours</h1>
+ 			
+ 			<ul style="list-style-type: none; padding-left: 0px;">
+            	<li style="padding: 5px">
+                    <span class="infos"><i class="fas fa-heading" style="color:#1abc9c"></i></span>
+                    <span style="color:#050505; font-weight: 500" th:text="*{course.themeCourse}"></span>
+                </li>
+                <li style="padding: 5px">
+                    <span class="infos"><i class="fas fa-clock" style="color:#1abc9c"></i></span>
+                    <span style="color:#050505; font-weight: 500" th:text="*{course.numberHours}"></span>
+                </li>
+            </ul>
+ 		</div>
  	</div>
- 	
- 	
         
     <footer th:insert="fragments/fragments :: footer"></footer>
 

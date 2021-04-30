@@ -24,17 +24,17 @@
 		            <tr>
 		                <th>Intitulé</th>
 		                <th>Nombre d'heure</th>
-		                <th> Actions </th>
+		                <th style="text-align:center"> Actions </th>
 		            </tr>
 		        </thead>
 		        <tbody>
 		            <tr th:each="cour : ${courseList}">
 		                <td th:text="${cour.themeCourse}"></td>
 		                <td th:text="${cour.numberHours}"></td>
-		                <td>
+		                <td style="text-align:center">
 							<a class="btn btn-success" th:href="@{/updateCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-pencil-square"></i> </a>				
 							<a class="btn btn-danger" th:href="@{/deleteCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-trash"></i> </a>
-							<a class="btn btn-info" th:href="@{/showCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-eye"></i> </a>
+							<a class="btn btn-info" th:href="@{/showCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-eye" style="color:white"></i> </a>
 		                </td>
 		            </tr>
 		        </tbody>
