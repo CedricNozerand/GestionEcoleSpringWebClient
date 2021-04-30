@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+<body>
+
+	<nav th:insert="fragments/fragments :: navigation"></nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+   	<!-- <div th:each="course : ${listCourse}">
+   		<p th:text="${course.themeCourse}"> </p>
+   	</div> -->
+
+    <!-- Content -->
+
+    <div class="container shadow" style="margin:100px 0 500px 300px;padding:30px 30px 60px 20px">
+    	<h1 class="mb-5"> Rechercher un étudiant par ID</h1>
+    	
+    	<div th:if="${message}" class="alert alert-danger alert-dismissible fade show" role="alert">
+		  	<span th:utext="${message}"></span>
+	    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+    	
+    	<form th:action="searchStudent" method="post" modelAttribute="id">
+			<div class="form-row">
+			
+				<div class="col">
+					<input type="text" id="id" name="id" placeholder="Identifiant" class="form-control"> 
+				</div>
+				
+				<div class="col">
+					<button type="submit" class="btn btn-primary">Rechercher</button>
+				</div>
+			</div>
+		</form>
+		
+		<div th:if="${student}" class="text-nowrap">
+            <h1>Informations de l'étudiant</h1>
+             <br>
+            Prénom             : <span th:text="*{student.firstName}">  </span>
+            <br/><br/>
+            Nom                  : <span th:text="*{student.lastName}">  </span>
+            <br/><br/>
+            Adresse mail     : <span th:text="*{student.mailAddress}">  </span>
+            <br/><br/>
+            Adresse             : <span th:text="*{student.address}">  </span>
+            <br/><br/>
+            N° téléphone     : <span th:text="*{student.numberPhone}">  </span>
+            <br/><br/>
+            Date naissance     : <span th:text="*{student.birthDate}">  </span>
+        </div>
+    </div>
+        
+    <footer th:insert="fragments/fragments :: footer"></footer>
+
+</body>
+</html>

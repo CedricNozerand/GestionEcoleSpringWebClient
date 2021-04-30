@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+<body>
+
+	<nav th:insert="fragments/fragments :: navigation"></nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+ 	
+ 
+ 	<div class="container">
+ 		
+ 		<div class="">
+ 		
+ 		<h1>Modifier un cours</h1>
+	
+			<div class="pt-4 pb-3">
+	
+				<form th:action="@{/editCourse/{theme}(theme=${course.themeCourse})}" method="post" modelAttribute="student">
+	
+					<div class="form-row">
+					
+						<div class="col">
+							<div class="md-form md-outline mt-0">
+								<label for="firstName">Intitulé  </label> 
+								<input type="text" th:field="*{course.themeCourse}" id="themeCourse" name="themeCourse" class="form-control" disabled> 
+							</div>
+						</div>
+						
+						<div class="col">
+							<div class="md-form md-outline mt-0">
+								<label for="lastName">Nombre d'heure(s)</label>
+								<input type="text" th:field="*{course.numberHours}" id="numberHours" name="numberHours" class="form-control"> 
+							</div>
+						</div>
+						
+						
+					</div>
+					<br/> <br/>
+					<div class="text-center mb-2">
+						<button type="submit" class="btn btn-primary mb-4">Modifer</button>
+					</div>
+				</form>
+			</div>
+		</div>
+ 	</div>
+        
+    <footer th:insert="fragments/fragments :: footer"></footer>
+
+</body>
+</html>

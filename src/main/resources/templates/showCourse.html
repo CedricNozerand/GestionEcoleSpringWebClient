@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+<body>
+
+	<nav th:insert="fragments/fragments :: navigation"></nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+ 	
+ 
+ 	<div class="card container mt-5 shadow">
+ 		
+ 		<h1>Informations sur le cours</h1>
+ 		
+ 		<br>
+
+		<div class="text-nowrap">
+			<!--Table-->
+			Intitulé		: <span th:text="*{course.themeCourse}">  </span>
+			<br/><br/>
+			Nombre d'heure	: <span th:text="*{course.numberHours}">  </span>
+			<br/><br/>
+		</div>
+ 	</div>
+ 	
+ 	
+        
+    <footer th:insert="fragments/fragments :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+<body>
+
+	<nav th:insert="fragments/fragments :: navigation"></nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+ 	
+ 
+ 	<div class="card container mt-5 shadow">
+ 		
+ 		<h1>Informations de l'étudiant</h1>
+ 		
+ 		<br>
+
+		<div class="text-nowrap">
+			<!--Table-->
+			Prénom		 	: <span th:text="*{student.firstName}">  </span>
+			<br/><br/>
+			Nom		 	 	: <span th:text="*{student.lastName}">  </span>
+			<br/><br/>
+			Adresse mail 	: <span th:text="*{student.mailAddress}">  </span>
+			<br/><br/>
+			Adresse		 	: <span th:text="*{student.address}">  </span>
+			<br/><br/>
+			N° téléphone 	: <span th:text="*{student.numberPhone}">  </span>
+			<br/><br/>
+			Date naissance 	: <span th:text="*{student.birthDate}">  </span>
+	
+		</div>
+ 		
+ 	</div>
+ 	
+ 	<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        
+    <footer th:insert="fragments/fragments :: footer"></footer>
+
+</body>
+</html>

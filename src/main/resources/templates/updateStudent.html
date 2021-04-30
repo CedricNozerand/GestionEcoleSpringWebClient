@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+<body>
+
+	<!-- Navigation-->
+    <nav th:insert="fragments/fragments :: navigation"></nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+ 
+ 	<div class="container">
+ 		
+ 		<div class="">
+ 		
+ 		<h1>Create student</h1>
+	
+			<div class="pt-4 pb-3">
+	
+				<form th:action="@{/editStudent/{id}(id=${student.id})}" method="post" modelAttribute="student">
+	
+					<div class="form-row">
+					
+						<div class="col">
+							<div class="md-form md-outline mt-0">
+								<label for="firstName">Prénom  </label> 
+								<input type="text" th:field="*{student.firstName}" id="firstName" name="firstName" class="form-control"> 
+							</div>
+						</div>
+						
+						<div class="col">
+							<div class="md-form md-outline mt-0">
+								<label for="lastName">Nom de famille</label>
+								<input type="text" th:field="*{student.lastName}" id="lastName" name="lastName" class="form-control"> 
+							</div>
+						</div>
+						
+					</div>
+	
+					<div class="md-form md-outline mt-0">				
+						<label for="mailAddress">Adresse mail</label>
+						<input type="text" th:field="*{student.mailAddress}" id="mailAddress" class="form-control" name="mailAddress"> 
+					</div>
+					
+					
+					<div class="md-form md-outline">	
+						<label for="address">Adresse</label>
+						<textarea th:field="*{student.address}"  id="address" class="form-control" name="address"></textarea>
+					</div>
+					
+					<div class="md-form md-outline mt-0"  type ="hidden;">
+						<label for="numberPhone">Numéro de téléphone</label>
+						<input type="text" th:field="*{student.numberPhone}" id="numberPhone" name="numberPhone" class="form-control">
+					</div>				
+					
+					<div class="md-form md-outline mt-0">
+						<label for="birthDate">Date de naissance (format yyyy-mm-dd)</label>
+						<input type="date" th:field="*{student.birthDate}" id="birthDate" name="birthDate" class="form-control">
+					</div>
+				
+									
+					<br/> <br/>
+					<div class="text-center mb-2">
+						<button type="submit" class="btn btn-primary mb-4">Modifer</button>
+					</div>
+	
+				</form>
+	
+	
+	
+			</div>
+
+		</div>
+ 		
+ 	</div>
+        
+    <footer th:insert="fragments/fragments :: footer"></footer>
+
+</body>
+</html>

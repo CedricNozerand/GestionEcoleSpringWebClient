@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+	<body>
+		
+		<nav th:insert="fragments/fragments :: navigation"></nav>
+
+	    <br>
+	    <br>
+	    <br>
+	    <br>
+	    <br>
+	    
+	    <!-- Content -->
+
+	    <div class="container">
+	    
+	    	<a class="btn btn-lg btn-primary text-white" href="/createCourse">Ajouter un cour</a><br><br>
+	    
+	    
+	    	<h1>Liste des cours</h1>
+	    	<table class="table">
+		        <thead>
+		            <tr>
+		                <th>Intitulé</th>
+		                <th>Nombre d'heure</th>
+		                <th> Actions </th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr th:each="cour : ${courseList}">
+		                <td th:text="${cour.themeCourse}"></td>
+		                <td th:text="${cour.numberHours}"></td>
+		                <td>
+							<a class="btn btn-success" th:href="@{/updateCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-pencil-square"></i> </a>				
+							<a class="btn btn-danger" th:href="@{/deleteCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-trash"></i> </a>
+							<a class="btn btn-info" th:href="@{/showCourse/{theme}(theme=${cour.themeCourse})}"> <i class="bi bi-eye"></i> </a>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+	    </div>
+	    
+	    <footer th:insert="fragments/fragments :: footer"></footer>
+	    
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/fragments :: header"><meta charset="UTF-8"></head>
+<body>
+
+	<nav th:insert="fragments/fragments :: navigation"></nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+ 	
+ 
+ 	<div class="container">
+ 		<div class="col-md-6 offset-md-3 shadow">
+ 		
+ 			<h1>Associer un cours à un étudiant</h1>
+ 			
+			<div class="pt-4 pb-3">
+				<form th:action="@{/setStudentCourse}" method="post">
+	
+					<div class="form-row">
+					
+						<input type="text" th:value="${student.id}" style="display:none" name="id">
+					
+						<div class="col">
+							<div class="md-form md-outline mt-0">
+								<label for="firstName">Prénom</label>
+								<input type="text" th:field="*{student.firstName}" id="firstName" name="firstName" class="form-control" disabled> 
+							</div>
+						</div>
+						
+						<div class="col">
+							<div class="md-form md-outline mt-0">
+								<label for="lastName">Nom </label>
+								<input type="text" th:field="*{student.lastName}" id="lastName" name="lastName" class="form-control" disabled> 
+							</div>
+						</div>
+					</div><br>
+	
+					<select class="custom-select" name="cour">
+						 <option th:each="cour : ${courseList}" th:value="${cour.themeCourse}" th:text="${cour.themeCourse}"></option>
+					</select>
+						
+					<br/> <br/>
+					<div class="text-center mb-2">
+						<button type="submit" class="btn btn-primary mb-4">Ajouter</button>
+					</div>
+				</form>
+			</div>
+		</div>
+ 	</div>
+ 	
+ 	<br>
+ 	<br>
+        
+    <footer th:insert="fragments/fragments :: footer"></footer>
+
+</body>
+</html>
